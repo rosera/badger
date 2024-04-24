@@ -36,7 +36,12 @@ BADGER_ENDPOINT=$(gcloud run services describe badger \
 Construct an image URL using the badger service URL, trigger id, and project id. [Example](https://badger-6bn2iswfgq-ue.a.run.app/build/status?project=hightowerlabs&id=1c96a91a-bb98-49d8-b43a-c76173a13ff8):
 
 ```
-https://badger-6bn2iswfgq-ue.a.run.app/build/status?project=hightowerlabs&id=1c96a91a-bb98-49d8-b43a-c76173a13ff8 
+[CLOUD_RUN_ENDPOINT]/build/status?project=[PROJECT_ID]&id=[TRIGGER_ID]
+```
+
+Use existing environment variables
+```
+$BADGER_ENDPOINT/build/status?project=$GOOGLE_CLOUD_PROJECT&id=$TRIGGER_ID
 ```
 
 ### Add Build Status To README Files
